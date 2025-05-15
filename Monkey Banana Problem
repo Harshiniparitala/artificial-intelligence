@@ -1,0 +1,6 @@
+at(monkey, door).
+at(banana, ceiling).
+has(monkey, nothing).
+can_reach(monkey, banana) :- at(monkey, box), at(box, banana).
+
+action(grab) :- can_reach(monkey, banana).
