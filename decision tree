@@ -1,0 +1,9 @@
+from sklearn import tree
+
+features = [[0, 0], [1, 1]]
+labels = [0, 1]
+
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(features, labels)
+
+print(clf.predict([[2., 2.]]))  # Output should be [1]
