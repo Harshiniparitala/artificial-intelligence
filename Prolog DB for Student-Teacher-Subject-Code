@@ -1,0 +1,5 @@
+teaches(mr_smith, math, c101).
+teaches(ms_jones, science, c102).
+
+student(john, c101).
+student(alex, c102).
