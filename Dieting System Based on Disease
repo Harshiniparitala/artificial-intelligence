@@ -1,0 +1,8 @@
+disease_diabetes.
+disease_obesity.
+diet(diabetes, 'Low sugar, High fiber').
+diet(obesity, 'Low fat, High protein').
+
+suggest_diet(Disease) :-
+    diet(Disease, Plan),
+    write('Recommended diet: '), write(Plan).
