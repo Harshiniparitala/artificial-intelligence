@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Sample Blog Page</title>
+</head>
+<body>
+    <h1>Welcome to My Blog</h1>
+    <p>This blog demonstrates HTML tags.</p>
+    <a href="https://example.com">Click here to visit a sample page</a>
+</body>
+</html>
