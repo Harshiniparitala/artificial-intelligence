@@ -1,0 +1,12 @@
+parent(john, mary).
+parent(mary, susan).
+parent(john, tom).
+parent(tom, anna).
+
+male(john).
+male(tom).
+female(mary).
+female(susan).
+female(anna).
+
+grandparent(X, Z) :- parent(X, Y), parent(Y, Z).
