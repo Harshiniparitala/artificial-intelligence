@@ -1,0 +1,21 @@
+edge(a, b, 1).
+edge(a, c, 3).
+edge(b, d, 4).
+edge(c, d, 1).
+
+heuristic(b, 5).
+heuristic(c, 2).
+heuristic(d, 0).
+
+best_first(Start, Goal, Path) :-
+    bestfs([[Start]], Goal, RevPath),
+    reverse(RevPath, Path).
+
+bestfs([[Goal|Rest]|_], Goal, [Goal|Rest]).
+bestfs([[Node|Rest]|Others], Goal, Path) :-
+    findall([X,Node|Rest],
+            (edge(Node, X, _), \+ member(X, [Node|Rest])),
+            Children),
+    append(Others, Children, NewQueue),
+    sort(NewQueue, Sorted),
+    bestfs(Sorted, Goal, Path).
