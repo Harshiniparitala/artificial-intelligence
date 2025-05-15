@@ -1,0 +1,5 @@
+goal(c) :- goal(a), goal(b).
+goal(a).
+goal(b).
+
+solve(X) :- goal(X), write(X), write(' is true'), nl.
