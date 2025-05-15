@@ -1,0 +1,27 @@
+colors = ['Red', 'Green', 'Blue']
+states = ['A', 'B', 'C', 'D']
+neighbors = {
+    'A': ['B', 'C'],
+    'B': ['A', 'C', 'D'],
+    'C': ['A', 'B', 'D'],
+    'D': ['B', 'C']
+}
+
+def is_valid(state, color, assignment):
+    return all(assignment.get(neigh) != color for neigh in neighbors[state])
+
+def solve(assignment):
+    if len(assignment) == len(states):
+        return assignment
+
+    unassigned = [s for s in states if s not in assignment][0]
+    for color in colors:
+        if is_valid(unassigned, color, assignment):
+            assignment[unassigned] = color
+            result = solve(assignment)
+            if result: return result
+            assignment.pop(unassigned)
+    return None
+
+solution = solve({})
+print("Coloring Solution:", solution)
