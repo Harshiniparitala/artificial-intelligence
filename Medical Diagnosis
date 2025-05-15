@@ -1,0 +1,5 @@
+symptom(john, fever).
+symptom(john, cough).
+diagnosis(Patient, flu) :-
+    symptom(Patient, fever),
+    symptom(Patient, cough).
